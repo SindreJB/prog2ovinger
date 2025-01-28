@@ -8,6 +8,7 @@ public class WrapLinesTextCommand extends WrapTextCommand {
 
   @Override
   public String execute(String text) {
-    return super.execute(text);
+    String lineEnd = "\n";
+    return super.execute(text).replace(lineEnd, getEnd() + lineEnd + getOpening());
   }
 }
