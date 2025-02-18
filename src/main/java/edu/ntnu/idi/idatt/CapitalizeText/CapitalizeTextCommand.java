@@ -6,6 +6,6 @@ public class CapitalizeTextCommand implements TextCommand {
 
   @Override
   public String execute(String text) {
-      return text.toUpperCase();
+    return Character.toUpperCase(text.charAt(0)) + text.substring(1);
   }
 }
