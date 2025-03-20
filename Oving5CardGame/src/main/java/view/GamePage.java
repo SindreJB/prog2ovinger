@@ -1,3 +1,4 @@
+package view;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -11,6 +12,12 @@ import javafx.stage.Stage;
 
 public class GamePage extends Application {
 
+
+  public static void main(String[] args) {
+    launch(args);
+  }
+
+  @Override
   public void start(Stage PrimaryStage) {
     BorderPane root = new BorderPane();
     root.setStyle("-fx-background-color: #F0EFEB;");
