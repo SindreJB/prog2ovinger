@@ -34,17 +34,20 @@ public class DeckOfCards {
         .forEach(card -> System.out.println(card.getRank().getName() + " of " + card.getSuit().name()));
   }
 
-
-  public void dealHand(int numberOfCards) {
+  public List<Card> dealHand(int numberOfCards) {
     List<Card> cardsToDeal = new ArrayList<>(deckOfCards.values());
+    List<Card> dealtCards = new ArrayList<>();
 
     Collections.shuffle(cardsToDeal);
 
     cardsToDeal.stream()
-      .limit(numberOfCards)
-      .forEach(card -> {
-        System.out.println(card.getRank().getName() + " of " + card.getSuit().name());
-        deckOfCards.remove(card.hashCode());
-      });
+        .limit(numberOfCards)
+        .forEach(card -> {
+          System.out.println(card.getRank().getName() + " of " + card.getSuit().name());
+          deckOfCards.remove(card.hashCode());
+          dealtCards.add(card);
+        });
+
+    return dealtCards;
   }
 }
